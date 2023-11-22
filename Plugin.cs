@@ -13,7 +13,7 @@ namespace ArachnophobiaMod
         {
             harmonymain = new Harmony("com.zenreon.ArachnophobiaMod");
             harmonymain.PatchAll();
-            Logger.LogInfo($"RT Arachnophobia mod loaded.");
+            Logger.LogInfo($"Arachnophobia mod loaded.");
         }
     }
 }
