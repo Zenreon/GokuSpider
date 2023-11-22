@@ -1,17 +1,19 @@
-﻿using BepInEx;
+
+using BepInEx;
 using HarmonyLib;
 
-namespace Gok
+
+namespace ArachnophobiaMod
 {
-    [BepInPlugin(PluginInfo.PLUGIN_GUID, PluginInfo.PLUGIN_NAME, PluginInfo.PLUGIN_VERSION)]
+    [BepInPlugin("com.zenreon.ArachnophobiaMod", "ArachnophobiaMod", "1.0.0" )]
     public class Plugin : BaseUnityPlugin
     {
         public Harmony harmonymain;
         private void Awake()
         {
-            harmonymain = new Harmony(PluginInfo.PLUGIN_GUID);
+            harmonymain = new Harmony("com.zenreon.ArachnophobiaMod");
             harmonymain.PatchAll();
-            Logger.LogInfo($"gok loaded.");
+            Logger.LogInfo($"RT Arachnophobia mod loaded.");
         }
     }
 }
