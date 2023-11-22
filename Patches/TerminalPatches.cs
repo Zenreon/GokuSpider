@@ -1,22 +1,21 @@
-﻿using HarmonyLib;
+using HarmonyLib;
 using System;
 using System.Collections.Generic;
 using System.Text;
 using LC_API;
 using UnityEngine;
-using UnityEngine.Video;
 
-namespace Gok.Patches
+
+namespace ArachnophobiaMod.patches
 {
     [HarmonyPatch]
-    class TerminalPatches
+    class ArachnophobiaTerminalPatch
     {
         [HarmonyPatch(typeof(Terminal), "Awake")]
         [HarmonyPostfix]
         public static void EditTerminal(Terminal __instance)
         {
-            __instance.enemyFiles[1].displayVideo = LC_API.BundleAPI.BundleLoader.GetLoadedAsset<VideoClip>("assets/Gok.m4v");
-            
+           __instance.enemyFiles[12].displayVideo = LC_API.BundleAPI.BundleLoader.GetLoadedAsset<UnityEngine.Video.VideoClip>("assets/Gok.m4v");
         }
     }
 }
